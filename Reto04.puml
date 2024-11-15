@@ -1,0 +1,28 @@
+@startuml Reto04
+class Persona
+class Entrenador
+class Jugador
+class Capitan
+class Equipo
+class Juego
+
+Persona --|> Jugador
+Persona --|> Entrenador
+Capitan "1" --* Equipo
+Jugador "6..19" --* Equipo
+Jugador --|> Capitan
+Equipo "2..n" --> Juego : compite en
+Equipo "1..n" --o Entrenador
+
+Persona : nombre:string
+Persona : tlf:string
+Persona : direccion:string
+Jugador : num:int
+Jugador : pos:string
+Capitan : dar_ordenes():void
+Equipo : nombre:string
+Entrenador : nivel:int
+Entrenador : anios_de_exp:int
+Juego : localidad:bool
+Juego : puntuacion:int
+@enduml

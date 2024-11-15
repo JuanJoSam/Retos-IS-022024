@@ -1,0 +1,57 @@
+@startuml Reto04_Obj
+object Jugador01
+object JugadorN
+object Capitan01
+object Jugador02
+object JugadorM
+object Capitan02
+object Equipo01
+object Equipo02
+object Partido
+
+Jugador01 -- JugadorN : 1..19
+Jugador02 -- JugadorM : 1..19
+Jugador01 --* Equipo01
+JugadorN --* Equipo01
+Capitan01 --* Equipo01
+Jugador02 --* Equipo02
+JugadorM --* Equipo02
+Capitan02 --* Equipo02
+Equipo01 --> Partido
+Equipo02 --> Partido
+
+Jugador01 : nombre: Pedro
+Jugador01 : tlf: 0412-1325467
+Jugador01 : direccion: Carrizal
+Jugador01 : num: 15
+Jugador01 : pos: centro
+JugadorN : nombre: Chris
+JugadorN : tlf: 0412-1325888
+JugadorN : direccion: Caracas
+JugadorN : num: 99
+JugadorN : pos: saque
+Jugador02 : nombre: Ignacius
+Jugador02 : tlf: 0412-9925467
+Jugador02 : direccion: Barranquilla
+Jugador02 : num: 55
+Jugador02 : pos: ataque
+JugadorM : nombre: Gabriel
+JugadorM : tlf: 0412-1325888
+JugadorM : direccion: Bogota
+JugadorM : num: 01
+JugadorM : pos: reserva
+Capitan01 : nombre: Juan
+Capitan01 : tlf: 0414-1365238
+Capitan01 : direccion: Los Teques
+Capitan01 : num: 19
+Capitan01 : pos: centro
+Capitan02 : nombre: Armando
+Capitan02 : tlf: 0414-1361515
+Capitan02 : direccion: Bogota
+Capitan02 : num: 33
+Capitan02 : pos: ataque
+Equipo01 : nombre: Venezuela
+Equipo02 : nombre: Colombia
+Partido : localidad: true
+Partido : puntuacion: 5
+@enduml
