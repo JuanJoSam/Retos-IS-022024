@@ -1,0 +1,16 @@
+@startuml Reto06_EjercicioH
+agent ": Registro" as class1
+agent "venta: Venta" as class2
+agent "catalogo: CatalogoProductos" as class3
+agent "fechaHora: Date" as class4
+agent "lineasVenta: List" as class5
+agent ": EspecificacionProducto" as class6
+
+class1 - class2 : " 1. crearNuevaVenta() \n | \nv"
+class1 - class6 : " 2. introducirArticulo() \n ->"
+class6 - class3 : " 3. getEspecificacion() \n ->"
+class2 - class5 : " 4. newList() \n 5. añadir() \n ->"
+class2 -- class4 : " 6. newDate() \n | \nv"
+class5 - class5 : " 7. newLineaVenta() \n <-"
+class2 -- class1 : " 8. crearLineaVenta() \n 9. finalizarNuevaVenta() \n ^\n|"
+@enduml

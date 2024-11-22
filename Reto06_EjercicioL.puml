@@ -1,0 +1,24 @@
+@startuml Reto06_EjercicioL
+[*] --> Producto_Encargado
+Producto_Encargado --> Pedido_Colocado
+Pedido_Colocado --> Pedido_Pagado
+Pedido_Pagado --> Pedido_Realizado : Todo OK
+Pedido_Pagado --> Cliente_Satisfecho : Entrega a Cliente
+Pedido_Realizado --> [*]
+Cliente_Satisfecho --> [*]
+
+state Pedido_Colocado{
+    [*] --> Analizando_Pedido
+    Analizando_Pedido --> Solicitar_Cobro : Pedido Valido
+    Solicitar_Cobro --> Cervezas_Reservadas : Cobro Valido
+    Cervezas_Reservadas --> [*]
+}
+
+state Pedido_Pagado{
+    [*] --> Pedido_Urgente
+    [*] --> Pedido_Ordinario
+    Pedido_Urgente --> [*] : Mandar inmediato
+    Pedido_Ordinario --> [*] : Añadir a una lista  
+}
+
+@endluml
